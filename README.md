@@ -1,4 +1,4 @@
-JumpUp.me Application <a href="https://travis-ci.org/sasfeld/JumpUpReloaded" title="Travis CI"><img src="https://travis-ci.org/sasfeld/JumpUpReloaded.svg?branch=master" /></a>
+JumpUp.me Application <a href="https://travis-ci.org/JumpUpMe/jumpup_webapp" title="Travis CI"><img src="https://travis-ci.org/JumpUpMe/jumpup_webapp.svg?branch=master" /></a>
 =======================
 
 Introduction
