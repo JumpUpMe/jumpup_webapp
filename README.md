@@ -53,9 +53,9 @@ Installation
 7. Afterwards, clone the environment configurations repository: 
   ```git clone git@groupelite.de:/home/git/jumpup/jumpup_configurations.git```
 8. Now, you are ready to clone the JumpUp web application repository itself: 
-	```git clone git@github.com:sasfeld/jumpup_webapp.git```
+	```git clone https://github.com/JumpUpMe/jumpup_webapp.git```
 9. (Optionally, if you need to work on the android app): 
-  ```git clone git@github.com:sasfeld/jumpup_android.git```
+  ```git clone https://github.com/JumpUpMe/jumpup_android.git```
 10. Make sure to have the following project structure:
   - JumpUp
     - jumpup_android (optionally)
