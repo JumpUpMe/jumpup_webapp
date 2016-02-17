@@ -6,7 +6,6 @@
 package de.htw.fb4.imi.jumpup.trip.rest.model;
 
 import java.sql.Timestamp;
-import java.util.Date;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -17,7 +16,9 @@ import de.htw.fb4.imi.jumpup.user.entity.User;
 import de.htw.fb4.imi.jumpup.verhicle.entity.Vehicle;
 
 /**
- * <p>Plain old object that will be (un-)marshalled and sent to REST callers.</p>
+ * <p>
+ * Plain old object that will be (un-)marshalled and sent to REST callers.
+ * </p>
  *
  * @author <a href="mailto:me@saschafeldmann.de">Sascha Feldmann</a>
  * @since 02.12.2015
@@ -39,25 +40,25 @@ public class TripWebServiceModel extends AbstractRestModel
     public static final String FIELD_NAME_OVERVIEW_PATH = "overViewPath";
     public static final String FIELD_NAME_VIA_WAYPOINTS = "viaWaypoints";
     public static final String FIELD_NAME_NUMBER_OF_SEATS = "numberOfSeats";
-    
+
     protected String startpoint;
     protected String endpoint;
     protected double latStartpoint;
     protected double longStartpoint;
     protected double latEndpoint;
     protected double longEndpoint;
-    protected Timestamp startDateTime;
-    protected Timestamp endDateTime;
+    protected long startDateTime;
+    protected long endDateTime;
     protected float price;
     protected String overViewPath;
     protected String viaWaypoints;
     protected Integer numberOfSeats;
     protected Vehicle vehicle;
     protected User driver;
-    protected Timestamp cancelationDateTime;
+    protected Long cancelationDateTime;
     protected long distanceMeters;
     protected long durationSeconds;
-    
+
     /**
      * @return the startpoint
      */
@@ -160,46 +161,24 @@ public class TripWebServiceModel extends AbstractRestModel
         this.longEndpoint = longEndpoint;
     }
 
-    /**
-     * @return the startDateTime
-     */
-    public Date getStartDateTime()
+    public void setStartDateTime(long startDateTime)
     {
-        if (null == this.startDateTime) {
-            return null;
-        }
-
-        return new Date(this.startDateTime.getTime());
+        this.startDateTime = startDateTime;
     }
 
-    /**
-     * @param startDateTime
-     *            the startDateTime to set
-     */
-    public void setStartDateTime(Date startDateTime)
+    public long getStartDateTime()
     {
-        this.startDateTime = new Timestamp(startDateTime.getTime());
+        return startDateTime;
     }
 
-    /**
-     * @return the endDateTime
-     */
-    public Date getEndDateTime()
+    public void setEndDateTime(long endDateTime)
     {
-        if (null == this.endDateTime) {
-            return null;
-        }
-
-        return new Date(this.endDateTime.getTime());
+        this.endDateTime = endDateTime;
     }
 
-    /**
-     * 
-     * @param endDateTime
-     */
-    public void setEndDateTime(Date endDateTime)
+    public long getEndDateTime()
     {
-        this.endDateTime = new Timestamp(endDateTime.getTime());
+        return endDateTime;
     }
 
     /**
@@ -304,23 +283,16 @@ public class TripWebServiceModel extends AbstractRestModel
         this.driver = driver;
     }
 
-    /**
-     * @return the cancelationDateTime
-     */
-    public Timestamp getCancelationDateTime()
+    public void setCancelationDateTime(Long cancelationDateTime)
+    {
+        this.cancelationDateTime = cancelationDateTime;
+    }
+
+    public Long getCancelationDateTime()
     {
         return cancelationDateTime;
     }
 
-    /**
-     * @param cancelationDateTime
-     *            the cancelationDateTime to set
-     */
-    public void setCancelationDateTime(Timestamp cancelationDateTime)
-    {
-        this.cancelationDateTime = cancelationDateTime;
-    }
-    
     /**
      * @return the distanceMeters
      */
@@ -353,5 +325,16 @@ public class TripWebServiceModel extends AbstractRestModel
     public void setDurationSeconds(long durationSeconds)
     {
         this.durationSeconds = durationSeconds;
+    }
+
+    /**
+     * 
+     * @param cancelationDateTime2
+     */
+    public void setCancelationDateTime(Timestamp cancelationDateTime2)
+    {
+        if (null != cancelationDateTime2) {
+            this.setCancelationDateTime(cancelationDateTime2.getTime());
+        }
     }
 }

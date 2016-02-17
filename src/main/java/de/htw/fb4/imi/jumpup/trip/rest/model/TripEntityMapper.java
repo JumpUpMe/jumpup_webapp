@@ -15,6 +15,7 @@ import javax.inject.Inject;
 import javax.inject.Named;
 
 import de.htw.fb4.imi.jumpup.rest.IEntityMapper;
+import de.htw.fb4.imi.jumpup.rest.RestUtil;
 import de.htw.fb4.imi.jumpup.settings.BeanNames;
 import de.htw.fb4.imi.jumpup.trip.entity.Trip;
 import de.htw.fb4.imi.jumpup.validation.ValidationException;
@@ -92,24 +93,37 @@ public class TripEntityMapper
         de.htw.fb4.imi.jumpup.trip.entity.Trip entityTrip = entity;
 
         webServiceTrip.setIdentity(entityTrip.getIdentity());
-        webServiceTrip.setCreationTimestamp(entityTrip.getCreationTimestamp());
-        webServiceTrip.setUpdateTimestamp(entityTrip.getUpdateTimestamp());
+        webServiceTrip.setCreationTimestamp(
+                RestUtil.getTimestampForWebServiceRespones(
+                        entityTrip.getCreationTimestamp().getTime())); // seconds
+        webServiceTrip
+                .setUpdateTimestamp(RestUtil.getTimestampForWebServiceRespones(
+                        entityTrip.getUpdateTimestamp().getTime())); // seconds
         webServiceTrip.setStartpoint(entityTrip.getStartpoint());
         webServiceTrip.setEndpoint(entityTrip.getEndpoint());
         webServiceTrip.setLatStartpoint(entityTrip.getLatStartpoint());
         webServiceTrip.setLongStartpoint(entityTrip.getLongStartpoint());
         webServiceTrip.setLatEndpoint(entityTrip.getLatEndpoint());
         webServiceTrip.setLongEndpoint(entityTrip.getLongEndpoint());
-        webServiceTrip.setStartDateTime(entityTrip.getStartDateTime());
-        webServiceTrip.setEndDateTime(entityTrip.getEndDateTime());
+        webServiceTrip
+                .setStartDateTime(RestUtil.getTimestampForWebServiceRespones(
+                        entityTrip.getStartDateTime().getTime())); // seconds
+        webServiceTrip
+                .setEndDateTime(RestUtil.getTimestampForWebServiceRespones(
+                        entityTrip.getEndDateTime().getTime())); // seconds
         webServiceTrip.setPrice(entityTrip.getPrice());
         webServiceTrip.setOverViewPath(entityTrip.getOverViewPath());
         webServiceTrip.setViaWaypoints(entityTrip.getViaWaypoints());
         webServiceTrip.setNumberOfSeats(entityTrip.getNumberOfSeats());
         webServiceTrip.setVehicle(entityTrip.getVehicle());
         // webServiceTrip.setDriver(entityTrip.getDriver());
-        webServiceTrip
-                .setCancelationDateTime(entityTrip.getCancelationDateTime());
+
+        if (null != entityTrip.getCancelationDateTime()) {
+            webServiceTrip.setCancelationDateTime(
+                    RestUtil.getTimestampForWebServiceRespones(
+                            entityTrip.getCancelationDateTime().getTime())); // seconds
+        }
+
         webServiceTrip.setDistanceMeters(entityTrip.getDistanceMeters());
         webServiceTrip.setDurationSeconds(entityTrip.getDurationSeconds());
 
@@ -123,8 +137,10 @@ public class TripEntityMapper
         Trip entityTrip = new de.htw.fb4.imi.jumpup.trip.entity.Trip();
 
         entityTrip.setIdentity(webServiceModel.getIdentity());
-        entityTrip.setCreationTimestamp(webServiceModel.getCreationTimestamp());
-        entityTrip.setUpdateTimestamp(webServiceModel.getUpdateTimestamp());
+        entityTrip.setCreationTimestamp(
+                convertToDatetime(webServiceModel.getCreationTimestamp()));
+        entityTrip.setUpdateTimestamp(
+                convertToDatetime(webServiceModel.getUpdateTimestamp()));
 
         this.validateStartpoint(webServiceModel.getStartpoint());
         entityTrip.setStartpoint(webServiceModel.getStartpoint());
@@ -144,13 +160,15 @@ public class TripEntityMapper
         this.validateLongEndpoint(webServiceModel.getLongEndpoint());
         entityTrip.setLongEndpoint(webServiceModel.getLongEndpoint());
 
-        this.validateStartDateTime(webServiceModel.getStartDateTime());
-        entityTrip.setStartDateTime(
-                convertToDatetime(webServiceModel.getStartDateTime()));
+        Timestamp startDateTime = convertToDatetime(
+                webServiceModel.getStartDateTime());
+        this.validateStartDateTime(startDateTime);
+        entityTrip.setStartDateTime(startDateTime);
 
-        this.validateEndDateTime(webServiceModel.getEndDateTime());
-        entityTrip.setEndDateTime(
-                convertToDatetime(webServiceModel.getEndDateTime()));
+        Timestamp endDateTime = convertToDatetime(
+                webServiceModel.getEndDateTime());
+        this.validateEndDateTime(endDateTime);
+        entityTrip.setEndDateTime(endDateTime);
 
         this.validatePrice(webServiceModel.getPrice());
         entityTrip.setPrice(webServiceModel.getPrice());
@@ -167,7 +185,7 @@ public class TripEntityMapper
         entityTrip.setVehicle(webServiceModel.getVehicle());
         // webServiceTrip.setDriver(entityTrip.getDriver());
         entityTrip.setCancelationDateTime(
-                webServiceModel.getCancelationDateTime());
+                convertToDatetime(webServiceModel.getCancelationDateTime()));
         entityTrip.setDistanceMeters(webServiceModel.getDistanceMeters());
         entityTrip.setDurationSeconds(webServiceModel.getDurationSeconds());
 
@@ -291,9 +309,9 @@ public class TripEntityMapper
         }
     }
 
-    protected Timestamp convertToDatetime(Date d)
+    protected Timestamp convertToDatetime(Long d)
     {
-        return new Timestamp(d.getTime());
+        return RestUtil.convertTimestampFromWebserviceRequestToDatetime(d);
     }
 
     @Override

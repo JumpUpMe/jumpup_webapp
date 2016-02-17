@@ -1,7 +1,5 @@
 package de.htw.fb4.imi.jumpup.rest.response.model;
 
-import java.sql.Timestamp;
-
 public class AbstractRestModel
 {
     public static final String FIELD_NAME_IDENTITY = "identity";
@@ -9,8 +7,8 @@ public class AbstractRestModel
     public static final String FIELD_NAME_UPDATE_TIMESTAMP = "updateTimestamp";
 
     protected long identity;
-    protected Timestamp creationTimestamp;
-    protected Timestamp updateTimestamp;
+    protected long creationTimestamp;
+    protected long updateTimestamp;
 
     public void setIdentity(long identity)
     {
@@ -22,22 +20,22 @@ public class AbstractRestModel
         return identity;
     }
 
-    public void setCreationTimestamp(Timestamp creationTimestamp)
+    public void setCreationTimestamp(long creationTimestamp)
     {
         this.creationTimestamp = creationTimestamp;
     }
 
-    public Timestamp getCreationTimestamp()
+    public long getCreationTimestamp()
     {
         return creationTimestamp;
     }
 
-    public void setUpdateTimestamp(Timestamp updateTimestamp)
+    public void setUpdateTimestamp(long updateTimestamp)
     {
         this.updateTimestamp = updateTimestamp;
     }
 
-    public Timestamp getUpdateTimestamp()
+    public long getUpdateTimestamp()
     {
         return updateTimestamp;
     }
