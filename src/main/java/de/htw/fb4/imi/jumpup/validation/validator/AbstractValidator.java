@@ -21,7 +21,7 @@ import javax.persistence.PersistenceUnit;
 import de.htw.fb4.imi.jumpup.Application;
 import de.htw.fb4.imi.jumpup.Application.LogType;
 import de.htw.fb4.imi.jumpup.settings.PersistenceSettings;
-import de.htw.fb4.imi.jumpup.util.FacesFacade;
+import de.htw.fb4.imi.jumpup.util.faces.FacesFacade;
 
 /**
  * <p>Abstract class for JSF validation classes.</p>

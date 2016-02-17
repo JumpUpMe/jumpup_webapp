@@ -7,7 +7,7 @@
  */</template><template autoinsert="false" context="filecomment_context" deleted="false" description="Comment for created Java files" enabled="true" id="org.eclipse.jdt.ui.text.codetemplates.filecomment" name="filecomment">/**
  * JumpUp.Me Car Pooling Application
  *
- * Copyright (c) 2014 Sebastian Renner, Marco Seidler, Sascha Feldmann
+ * Copyright (c) 2014-2016 Sascha Feldmann
  */</template><template autoinsert="false" context="typecomment_context" deleted="false" description="Comment for created types" enabled="true" id="org.eclipse.jdt.ui.text.codetemplates.typecomment" name="typecomment">/**
  * &lt;p&gt;&lt;/p&gt;
  *

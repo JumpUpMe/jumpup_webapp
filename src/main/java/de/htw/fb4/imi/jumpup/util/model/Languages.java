@@ -3,7 +3,7 @@
  *
  * Copyright (c) 2014 Sebastian Renner, Marco Seidler, Sascha Feldmann
  */
-package de.htw.fb4.imi.jumpup.util;
+package de.htw.fb4.imi.jumpup.util.model;
 
 import java.util.HashMap;
 import java.util.Map;

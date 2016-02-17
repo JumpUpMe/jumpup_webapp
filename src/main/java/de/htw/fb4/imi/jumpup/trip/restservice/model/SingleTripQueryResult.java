@@ -13,8 +13,8 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlRootElement;
 
 import de.htw.fb4.imi.jumpup.trip.query.TripQueryMethod;
-import de.htw.fb4.imi.jumpup.util.Gender;
-import de.htw.fb4.imi.jumpup.util.Languages;
+import de.htw.fb4.imi.jumpup.util.model.Gender;
+import de.htw.fb4.imi.jumpup.util.model.Languages;
 
 /**
  * <p>

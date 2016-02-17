@@ -15,8 +15,8 @@ import de.htw.fb4.imi.jumpup.user.details.UserDetailsMethod;
 import de.htw.fb4.imi.jumpup.user.entity.User;
 import de.htw.fb4.imi.jumpup.user.entity.UserDetails;
 import de.htw.fb4.imi.jumpup.user.login.LoginSession;
-import de.htw.fb4.imi.jumpup.util.Gender;
-import de.htw.fb4.imi.jumpup.util.Languages;
+import de.htw.fb4.imi.jumpup.util.model.Gender;
+import de.htw.fb4.imi.jumpup.util.model.Languages;
 
 /**
  * Controller class for {@link de.htw.fb4.imi.jumpup.user.entity.UserDetails}.

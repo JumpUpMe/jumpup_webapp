@@ -32,96 +32,112 @@ import de.htw.fb4.imi.jumpup.util.ErrorPrintable;
 import de.htw.fb4.imi.jumpup.validation.ValidationException;
 
 /**
- * <p></p>
+ * <p>
+ * </p>
  *
  * @author <a href="mailto:me@saschafeldmann.de">Sascha Feldmann</a>
  * @since 25.11.2015
  *
  */
-public abstract class AbstractRestController<T extends AbstractRestModel> implements IGet, IPost<T>, IPut<T>, IDelete, IOptions
+public abstract class AbstractRestController<T extends AbstractRestModel>
+        implements IGet, IPost<T>, IPut<T>, IDelete, IOptions
 {
+    protected static final String QUERY_PARAM_LIMIT = "limit";
+    protected static final String QUERY_PARAM_OFFSET = "offset";
+
     @Inject
     protected IResponseEntityBuilder responseEntityBuilder;
-    
+
     @Inject
     protected Translatable translator;
-    
-    
-    protected boolean isEnabled() {
+
+    protected boolean isEnabled()
+    {
         return false;
     }
-    
+
+    @Override
     @GET
-    public Response get(@Context HttpHeaders headers) {
+    public Response get(@Context HttpHeaders headers)
+    {
         if (!this.isEnabled()) {
             return this.sendVersionDisabledResponse();
         }
-        
-        return null;
-    }   
-    
-    @GET
-    public Response get(@Context HttpHeaders headers, Long... ids) {
-        if (!this.isEnabled()) {
-            return this.sendVersionDisabledResponse();
-        }
-        
+
         return null;
     }
 
+    @Override
+    @GET
+    public Response get(@Context HttpHeaders headers, Long... ids)
+    {
+        if (!this.isEnabled()) {
+            return this.sendVersionDisabledResponse();
+        }
+
+        return null;
+    }
+
+    @Override
     @POST
-    public Response post(@Context HttpHeaders headers, T abstractRestModel){
+    public Response post(@Context HttpHeaders headers, T abstractRestModel)
+    {
         if (!this.isEnabled()) {
             return this.sendVersionDisabledResponse();
         }
-        
+
         return null;
-    }   
-    
+    }
+
+    @Override
     @PUT
-    public Response put(@Context HttpHeaders headers, Long entityId, T abstractRestModel){
+    public Response put(@Context HttpHeaders headers, Long entityId,
+            T abstractRestModel)
+    {
         if (!this.isEnabled()) {
             return this.sendVersionDisabledResponse();
         }
-        
+
         return null;
-    }   
-    
+    }
+
+    @Override
     @DELETE
-    public Response delete(@Context HttpHeaders headers, Long entityId){
+    public Response delete(@Context HttpHeaders headers, Long entityId)
+    {
         if (!this.isEnabled()) {
             return this.sendVersionDisabledResponse();
         }
-        
+
         return null;
-    }   
-    
+    }
+
+    @Override
     @OPTIONS
-    public Response options(@Context HttpHeaders headers){
+    public Response options(@Context HttpHeaders headers)
+    {
         if (!this.isEnabled()) {
             return this.sendVersionDisabledResponse();
         }
-        
+
         return null;
-    }   
-    
+    }
+
     private Response sendVersionDisabledResponse()
     {
-        return Response
-                .notAcceptable(null)
-                .entity(this.responseEntityBuilder.buildMessageFromErrorString(IErrorResponseEntityBuilder.MESSAGE_VERSION_DISABLED))
-                .type(MediaType.APPLICATION_JSON)
-                .build();
+        return Response.notAcceptable(null)
+                .entity(this.responseEntityBuilder.buildMessageFromErrorString(
+                        IErrorResponseEntityBuilder.MESSAGE_VERSION_DISABLED))
+                .type(MediaType.APPLICATION_JSON).build();
     }
-    
+
     protected Response sendNotFoundResponse(String message)
     {
-        return Response
-                .status(Status.NOT_FOUND)
-                .entity(this.responseEntityBuilder.buildMessageFromErrorString(message))
-                .type(MediaType.APPLICATION_JSON)
-                .build();
-    }    
+        return Response.status(Status.NOT_FOUND)
+                .entity(this.responseEntityBuilder
+                        .buildMessageFromErrorString(message))
+                .type(MediaType.APPLICATION_JSON).build();
+    }
 
     protected Response sendInternalServerErrorResponse(
             ErrorPrintable errorPrintable)
@@ -131,85 +147,78 @@ public abstract class AbstractRestController<T extends AbstractRestModel> implem
 
     protected Response sendInternalErrorResponse(String msg)
     {
-        return Response
-                .status(Status.INTERNAL_SERVER_ERROR)
-                .entity(this.responseEntityBuilder.buildMessageFromErrorString(msg))
-                .type(MediaType.APPLICATION_JSON)
-                .build();
-    }       
+        return Response.status(Status.INTERNAL_SERVER_ERROR)
+                .entity(this.responseEntityBuilder
+                        .buildMessageFromErrorString(msg))
+                .type(MediaType.APPLICATION_JSON).build();
+    }
 
     protected Response sendOkResponse(String message)
     {
         return Response
                 .ok(this.responseEntityBuilder.buildSuccessFromString(message))
-                .type(MediaType.APPLICATION_JSON)
-                .build();
+                .type(MediaType.APPLICATION_JSON).build();
     }
-    
+
     protected Response sendPutOkResponse(String entityType, long entityId)
     {
         return Response
-                .ok(this.responseEntityBuilder.buildSuccessFromString(
-                        String.format(ISuccessResponseEntityBuilder.MESSAGE_UPDATED, entityType, entityId))
-                        )
-                .type(MediaType.APPLICATION_JSON)
-                .build();
+                .ok(this.responseEntityBuilder.buildSuccessFromString(String
+                        .format(ISuccessResponseEntityBuilder.MESSAGE_UPDATED,
+                                entityType, entityId)))
+                .type(MediaType.APPLICATION_JSON).build();
     }
-    
+
     protected Response sendOkButErrorResponse(String errorMessage)
     {
-        return Response
-                .ok()
-                .entity(this.responseEntityBuilder.buildMessageFromErrorString(errorMessage, true))
-                .type(MediaType.APPLICATION_JSON)
-                .build();
-    }    
+        return Response.ok()
+                .entity(this.responseEntityBuilder
+                        .buildMessageFromErrorString(errorMessage, true))
+                .type(MediaType.APPLICATION_JSON).build();
+    }
 
     protected Response sendOkButErrorResponse(ApplicationUserException e)
     {
-       return this.sendOkButErrorResponse(e.getUserMsg());        
+        return this.sendOkButErrorResponse(e.getUserMsg());
     }
-    
+
     protected Response sendCreatedResponse(String entityType, long entityId)
     {
-        return Response
-                .created(null)
-                .entity(this.responseEntityBuilder.buildSuccessFromString(
-                        String.format(ISuccessResponseEntityBuilder.MESSAGE_CREATED, entityType, entityId)
-                 ))
-                .type(MediaType.APPLICATION_JSON)
-                .build();
-    }    
-    
-    protected Response sendCreatedButErrorResponse(String errorMessage) 
+        return Response.created(null)
+                .entity(this.responseEntityBuilder.buildSuccessFromString(String
+                        .format(ISuccessResponseEntityBuilder.MESSAGE_CREATED,
+                                entityType, entityId)))
+                .type(MediaType.APPLICATION_JSON).build();
+    }
+
+    protected Response sendCreatedButErrorResponse(String errorMessage)
     {
-        return Response
-                .created(null)
-                .entity(this.responseEntityBuilder.buildMessageFromErrorString(errorMessage, true))
-                .type(MediaType.APPLICATION_JSON)
-                .build();
+        return Response.created(null)
+                .entity(this.responseEntityBuilder
+                        .buildMessageFromErrorString(errorMessage, true))
+                .type(MediaType.APPLICATION_JSON).build();
     }
 
     protected Response sendInternalServerErrorResponse(String errorMessage)
     {
-        return Response
-                .status(Status.INTERNAL_SERVER_ERROR)
-                .entity(this.responseEntityBuilder.buildMessageFromErrorString(errorMessage))
-                .type(MediaType.APPLICATION_JSON)
-                .build();
-    }    
-
-    protected Response sendInternalServerErrorResponse(ApplicationUserException tripCreationException)
-    {
-        return this.sendInternalErrorResponse(tripCreationException.getUserMsg());
+        return Response.status(Status.INTERNAL_SERVER_ERROR)
+                .entity(this.responseEntityBuilder
+                        .buildMessageFromErrorString(errorMessage))
+                .type(MediaType.APPLICATION_JSON).build();
     }
-    
+
+    protected Response sendInternalServerErrorResponse(
+            ApplicationUserException tripCreationException)
+    {
+        return this
+                .sendInternalErrorResponse(tripCreationException.getUserMsg());
+    }
+
     protected Response sendBadRequestResponse(ValidationException e)
     {
-        return Response
-                .status(Status.BAD_REQUEST)
-                .entity(this.responseEntityBuilder.buildMessageFromValidationException(e))
-                .type(MediaType.APPLICATION_JSON)
-                .build();
+        return Response.status(Status.BAD_REQUEST)
+                .entity(this.responseEntityBuilder
+                        .buildMessageFromValidationException(e))
+                .type(MediaType.APPLICATION_JSON).build();
     }
 }

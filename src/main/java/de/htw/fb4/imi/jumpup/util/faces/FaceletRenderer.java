@@ -3,7 +3,7 @@
  *
  * Copyright (c) 2014 Sebastian Renner, Marco Seidler, Sascha Feldmann
  */
-package de.htw.fb4.imi.jumpup.util;
+package de.htw.fb4.imi.jumpup.util.faces;
 
 import java.io.IOException;
 import java.io.StringWriter;

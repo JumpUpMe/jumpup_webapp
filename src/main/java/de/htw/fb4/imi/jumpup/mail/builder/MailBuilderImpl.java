@@ -22,9 +22,9 @@ import de.htw.fb4.imi.jumpup.config.IConfigKeys;
 import de.htw.fb4.imi.jumpup.mail.MailModel;
 import de.htw.fb4.imi.jumpup.mail.util.ConfigReader;
 import de.htw.fb4.imi.jumpup.settings.BeanNames;
-import de.htw.fb4.imi.jumpup.util.FaceletRenderer;
-import de.htw.fb4.imi.jumpup.util.FacesFacade;
 import de.htw.fb4.imi.jumpup.util.TemplateHandler;
+import de.htw.fb4.imi.jumpup.util.faces.FaceletRenderer;
+import de.htw.fb4.imi.jumpup.util.faces.FacesFacade;
 
 /**
  * <p></p>

@@ -21,8 +21,8 @@ import javax.persistence.Transient;
 import javax.servlet.http.Part;
 
 import de.htw.fb4.imi.jumpup.entity.AbstractEntity;
-import de.htw.fb4.imi.jumpup.util.Gender;
-import de.htw.fb4.imi.jumpup.util.Languages;
+import de.htw.fb4.imi.jumpup.util.model.Gender;
+import de.htw.fb4.imi.jumpup.util.model.Languages;
 
 @Entity
 @Table(name = "user_details")
@@ -30,8 +30,8 @@ public class UserDetails extends AbstractEntity
 {
 
     /**
-	 * 
-	 */
+     * 
+     */
     private static final long serialVersionUID = -4235428005961187774L;
 
     @OneToOne(fetch = FetchType.LAZY)
@@ -54,11 +54,11 @@ public class UserDetails extends AbstractEntity
     protected Byte[] avatar;
 
     @ElementCollection(targetClass = Languages.class, fetch = FetchType.EAGER)
-    @JoinTable(name = "languages", joinColumns = @JoinColumn(name = "identity"))
+    @JoinTable(name = "languages", joinColumns = @JoinColumn(name = "identity") )
     @Column(name = "languages", nullable = true, updatable = true)
     @Enumerated(EnumType.ORDINAL)
     protected Set<Languages> languages;
-    
+
     @Transient
     protected Set<String> stringLanguages;
 
@@ -71,7 +71,7 @@ public class UserDetails extends AbstractEntity
 
     @Column(name = "skype", nullable = false, updatable = true)
     protected String skype;
-    
+
     @Transient
     protected Part avatarFile;
 
@@ -134,12 +134,13 @@ public class UserDetails extends AbstractEntity
     }
 
     /**
-     * @param stringLanguages the stringLanguages to set
+     * @param stringLanguages
+     *            the stringLanguages to set
      */
     public void setStringLanguages(Set<String> stringLanguages)
     {
         this.stringLanguages = stringLanguages;
-        
+
         HashSet<Languages> languagesSet = new HashSet<>();
         for (String language : stringLanguages) {
             languagesSet.add(Languages.valueOf(language));
@@ -186,7 +187,9 @@ public class UserDetails extends AbstractEntity
 
     /**
      * Set the file which will be set into the avatar bytecode.
-     * @param avatarFile the avatarFile to set
+     * 
+     * @param avatarFile
+     *            the avatarFile to set
      */
     public void setAvatarFile(Part avatarFile)
     {
@@ -258,19 +261,19 @@ public class UserDetails extends AbstractEntity
     }
 
     /**
-     * Check whether the user's details are filled/completed or whether he still needs to complete it.
+     * Check whether the user's details are filled/completed or whether he still
+     * needs to complete it.
+     * 
      * @return
      */
     public boolean isFilled()
     {
-        if (
-               null == this.dateOfBirth
-//                || null == this.avatar
-                || null == this.gender
-                || null == this.mobileNumber ) {
+        if (null == this.dateOfBirth
+                // || null == this.avatar
+                || null == this.gender || null == this.mobileNumber) {
             return false;
         }
-        
+
         return true;
     }
 }

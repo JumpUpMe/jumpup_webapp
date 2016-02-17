@@ -12,6 +12,7 @@ import java.util.regex.Pattern;
 import javax.faces.context.FacesContext;
 
 import de.htw.fb4.imi.jumpup.ApplicationError;
+import de.htw.fb4.imi.jumpup.util.faces.FacesFacade;
 
 /**
  * <p>This class handles any template file, such as *.txt, scans for expression language tags and evaluates them.</p>

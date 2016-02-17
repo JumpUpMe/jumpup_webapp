@@ -7,7 +7,7 @@ package de.htw.fb4.imi.jumpup.controller;
 
 import javax.inject.Inject;
 
-import de.htw.fb4.imi.jumpup.util.FacesFacade;
+import de.htw.fb4.imi.jumpup.util.faces.FacesFacade;
 
 /**
  * <p></p>

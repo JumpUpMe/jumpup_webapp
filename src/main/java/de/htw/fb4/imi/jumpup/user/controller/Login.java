@@ -21,7 +21,7 @@ import de.htw.fb4.imi.jumpup.settings.BeanNames;
 import de.htw.fb4.imi.jumpup.user.login.LoginMethod;
 import de.htw.fb4.imi.jumpup.user.login.LoginModel;
 import de.htw.fb4.imi.jumpup.user.login.LoginSession;
-import de.htw.fb4.imi.jumpup.util.Gender;
+import de.htw.fb4.imi.jumpup.util.model.Gender;
 
 /**
  * <p>

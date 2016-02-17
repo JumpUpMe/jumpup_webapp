@@ -24,7 +24,7 @@ import de.htw.fb4.imi.jumpup.trip.TripDAO;
 import de.htw.fb4.imi.jumpup.trip.entity.Trip;
 import de.htw.fb4.imi.jumpup.user.Role;
 import de.htw.fb4.imi.jumpup.user.login.LoginSession;
-import de.htw.fb4.imi.jumpup.util.Gender;
+import de.htw.fb4.imi.jumpup.util.model.Gender;
 
 /**
  * 

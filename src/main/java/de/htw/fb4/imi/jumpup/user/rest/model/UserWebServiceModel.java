@@ -12,7 +12,7 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlRootElement;
 
 import de.htw.fb4.imi.jumpup.rest.response.model.AbstractRestModel;
-import de.htw.fb4.imi.jumpup.util.Gender;
+import de.htw.fb4.imi.jumpup.util.model.Gender;
 
 /**
  * <p>Plain old object that will be (un-)marshalled and sent to REST callers.</p>
