@@ -40,7 +40,7 @@ import de.htw.fb4.imi.jumpup.verhicle.entity.Vehicle;
 @Entity
 @Table(name = "trip")
 @NamedQueries({
-        @NamedQuery(name = Trip.NAME_QUERY_BY_USER, query = "SELECT t FROM Trip t WHERE t.driver = :driver"),
+        @NamedQuery(name = Trip.NAME_QUERY_BY_USER, query = "SELECT t FROM Trip t WHERE t.driver = :driver ORDER BY t.startDateTime DESC, t.endDateTime DESC"),
         @NamedQuery(name = Trip.NAME_QUERY_BY_STARTPOINT, query = "SELECT t FROM Trip t WHERE t.startpoint = :startpoint"),
         @NamedQuery(name = Trip.NAME_QUERY_BY_ENDPOINT, query = "SELECT t FROM Trip t WHERE t.endpoint = :endpoint"),
         @NamedQuery(name = Trip.NAME_QUERY_BY_ID, query = "SELECT t FROM Trip t WHERE t.identity = :identity"),
