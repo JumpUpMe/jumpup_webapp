@@ -18,9 +18,9 @@ import de.htw.fb4.imi.jumpup.rest.IEntityMapper;
 import de.htw.fb4.imi.jumpup.rest.RestUtil;
 import de.htw.fb4.imi.jumpup.settings.BeanNames;
 import de.htw.fb4.imi.jumpup.trip.TripDAO;
+import de.htw.fb4.imi.jumpup.trip.ajax.QueryResultFactory;
+import de.htw.fb4.imi.jumpup.trip.ajax.model.TripSearchCriteria;
 import de.htw.fb4.imi.jumpup.trip.entity.Trip;
-import de.htw.fb4.imi.jumpup.trip.rest.QueryResultFactory;
-import de.htw.fb4.imi.jumpup.trip.restservice.model.TripSearchCriteria;
 import de.htw.fb4.imi.jumpup.validation.ValidationException;
 
 /**

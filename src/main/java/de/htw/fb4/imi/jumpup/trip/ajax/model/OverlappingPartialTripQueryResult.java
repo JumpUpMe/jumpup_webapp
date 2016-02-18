@@ -3,7 +3,7 @@
  *
  * Copyright (c) 2014-2015 Sascha Feldmann
  */
-package de.htw.fb4.imi.jumpup.trip.restservice.model;
+package de.htw.fb4.imi.jumpup.trip.ajax.model;
 
 import java.util.Set;
 

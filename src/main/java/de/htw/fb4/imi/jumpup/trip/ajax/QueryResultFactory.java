@@ -3,7 +3,7 @@
  *
  * Copyright (c) 2014-2015 Sebastian Renner, Marco Seidler, Sascha Feldmann
  */
-package de.htw.fb4.imi.jumpup.trip.rest;
+package de.htw.fb4.imi.jumpup.trip.ajax;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,15 +15,15 @@ import de.htw.fb4.imi.jumpup.booking.entity.Booking;
 import de.htw.fb4.imi.jumpup.navigation.NavigationBean;
 import de.htw.fb4.imi.jumpup.settings.BeanNames;
 import de.htw.fb4.imi.jumpup.translate.Translatable;
+import de.htw.fb4.imi.jumpup.trip.ajax.model.OverlappingPartialTripQueryResult;
+import de.htw.fb4.imi.jumpup.trip.ajax.model.SingleTripQueryResult;
+import de.htw.fb4.imi.jumpup.trip.ajax.model.TripQueryNoResults;
+import de.htw.fb4.imi.jumpup.trip.ajax.model.TripQueryResults;
+import de.htw.fb4.imi.jumpup.trip.ajax.model.TripSearchCriteria;
+import de.htw.fb4.imi.jumpup.trip.ajax.model.TripQueryResults.Translations;
 import de.htw.fb4.imi.jumpup.trip.entity.Trip;
 import de.htw.fb4.imi.jumpup.trip.graph.Path;
-import de.htw.fb4.imi.jumpup.trip.restservice.model.OverlappingPartialTripQueryResult;
-import de.htw.fb4.imi.jumpup.trip.restservice.model.SingleTripQueryResult;
-import de.htw.fb4.imi.jumpup.trip.restservice.model.TripQueryNoResults;
-import de.htw.fb4.imi.jumpup.trip.restservice.model.TripQueryResults;
-import de.htw.fb4.imi.jumpup.trip.restservice.model.TripQueryResults.Translations;
 import de.htw.fb4.imi.jumpup.user.entity.User;
-import de.htw.fb4.imi.jumpup.trip.restservice.model.TripSearchCriteria;
 import de.htw.fb4.imi.jumpup.util.LocaleHelper;
 import de.htw.fb4.imi.jumpup.verhicle.entity.Vehicle;
 

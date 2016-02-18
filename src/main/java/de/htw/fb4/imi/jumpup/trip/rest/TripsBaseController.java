@@ -48,7 +48,7 @@ import de.htw.fb4.imi.jumpup.validation.ValidationException;
  * @since 25.11.2015
  *
  */
-public class BaseController extends SecuredRestController<TripWebServiceModel>
+public class TripsBaseController extends SecuredRestController<TripWebServiceModel>
 {
     public static final String PATH = "/trip";
     private static final String PATH_PARAM_TRIP_ID = "tripId";

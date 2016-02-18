@@ -20,8 +20,8 @@ import de.htw.fb4.imi.jumpup.Application;
 import de.htw.fb4.imi.jumpup.Application.LogType;
 import de.htw.fb4.imi.jumpup.ApplicationProperties;
 import de.htw.fb4.imi.jumpup.settings.BeanNames;
+import de.htw.fb4.imi.jumpup.trip.ajax.model.TripSearchCriteria;
 import de.htw.fb4.imi.jumpup.trip.entity.Trip;
-import de.htw.fb4.imi.jumpup.trip.restservice.model.TripSearchCriteria;
 import de.htw.fb4.imi.jumpup.user.controller.Login;
 import de.htw.fb4.imi.jumpup.user.entity.User;
 

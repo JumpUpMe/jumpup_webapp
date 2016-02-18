@@ -3,7 +3,7 @@
  *
  * Copyright (c) 2014 Sebastian Renner, Marco Seidler, Sascha Feldmann
  */
-package de.htw.fb4.imi.jumpup.trip.rest;
+package de.htw.fb4.imi.jumpup.trip.ajax;
 
 import javax.faces.bean.RequestScoped;
 import javax.inject.Inject;
@@ -21,9 +21,9 @@ import org.apache.commons.lang.exception.ExceptionUtils;
 
 import de.htw.fb4.imi.jumpup.Application;
 import de.htw.fb4.imi.jumpup.Application.LogType;
+import de.htw.fb4.imi.jumpup.trip.ajax.model.TripQueryResults;
+import de.htw.fb4.imi.jumpup.trip.ajax.model.TripSearchCriteria;
 import de.htw.fb4.imi.jumpup.trip.query.TripQueryMethod;
-import de.htw.fb4.imi.jumpup.trip.restservice.model.TripQueryResults;
-import de.htw.fb4.imi.jumpup.trip.restservice.model.TripSearchCriteria;
 
 /**
  * <p>

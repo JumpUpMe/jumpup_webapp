@@ -3,7 +3,7 @@
  *
  * Copyright (c) 2014-2015 Sebastian Renner, Marco Seidler, Sascha Feldmann
  */
-package de.htw.fb4.imi.jumpup.trip.restservice.model;
+package de.htw.fb4.imi.jumpup.trip.ajax.model;
 
 import java.text.ParseException;
 import java.util.Date;
@@ -12,6 +12,7 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlRootElement;
 
+import de.htw.fb4.imi.jumpup.rest.response.model.AbstractRestModel;
 import de.htw.fb4.imi.jumpup.trip.entity.Trip;
 import de.htw.fb4.imi.jumpup.user.entity.User;
 import de.htw.fb4.imi.jumpup.util.LocaleHelper;
@@ -32,7 +33,7 @@ import de.htw.fb4.imi.jumpup.util.LocaleHelper;
  */
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.PROPERTY)
-public class TripSearchCriteria
+public class TripSearchCriteria extends AbstractRestModel
 {
     protected String startPoint;
     protected Double latStartPoint;
@@ -242,7 +243,7 @@ public class TripSearchCriteria
     {
         this.maxDistance = maxDistance;
     }
-    
+
     public void setPassenger(User passenger)
     {
         this.passenger = passenger;
@@ -395,22 +396,25 @@ public class TripSearchCriteria
     }
 
     /**
-     * Create a booking hash which is appended to the booking URL of this trip and checked afterwards during the booking to avoid parameter injection.
+     * Create a booking hash which is appended to the booking URL of this trip
+     * and checked afterwards during the booking to avoid parameter injection.
+     * 
      * @return
      */
     public String createBookingHash(Trip trip)
     {
         System.out.println(this);
-        // make sure to include all variable parameters that should be protected from manipulation
+        // make sure to include all variable parameters that should be protected
+        // from manipulation
         long hash = ((this.getStartPoint().hashCode()
-            + this.getEndPoint().hashCode()
-            - Double.toString(this.getLatStartPoint()).hashCode() 
-            - Double.toString(this.getLongStartPoint()).hashCode() 
-            + Double.toString(this.getLatEndPoint()).hashCode() 
-            + Double.toString(this.getLongEndPoint()).hashCode())
-            % trip.getIdentity()) * 333;
-            
+                + this.getEndPoint().hashCode()
+                - Double.toString(this.getLatStartPoint()).hashCode()
+                - Double.toString(this.getLongStartPoint()).hashCode()
+                + Double.toString(this.getLatEndPoint()).hashCode()
+                + Double.toString(this.getLongEndPoint()).hashCode())
+                % trip.getIdentity()) * 333;
+
         return Long.toString(hash);
-    }   
-  
+    }
+
 }

@@ -9,20 +9,21 @@ import java.io.Serializable;
 
 import javax.ws.rs.Path;
 
-import de.htw.fb4.imi.jumpup.trip.rest.BaseController;
+import de.htw.fb4.imi.jumpup.trip.rest.TripsBaseController;
 
 /**
- * <p></p>
+ * <p>
+ * </p>
  *
  * @author <a href="mailto:me@saschafeldmann.de">Sascha Feldmann</a>
  * @since 25.11.2015
  *
  */
-@Path(V1Controller.VERSION_PATH + BaseController.PATH)
-public class V1Controller extends BaseController implements Serializable
+@Path(V1TripsController.VERSION_PATH + TripsBaseController.PATH)
+public class V1TripsController extends TripsBaseController implements Serializable
 {
     public static final String VERSION_PATH = "/v1.0.0";
-    
+
     /**
      * 
      */

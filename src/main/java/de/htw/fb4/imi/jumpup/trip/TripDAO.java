@@ -10,8 +10,8 @@ import java.util.List;
 import javax.ejb.Local;
 import javax.persistence.NoResultException;
 
+import de.htw.fb4.imi.jumpup.trip.ajax.model.TripSearchCriteria;
 import de.htw.fb4.imi.jumpup.trip.entity.Trip;
-import de.htw.fb4.imi.jumpup.trip.restservice.model.TripSearchCriteria;
 import de.htw.fb4.imi.jumpup.user.entity.User;
 import de.htw.fb4.imi.jumpup.util.model.Pagination;
 
