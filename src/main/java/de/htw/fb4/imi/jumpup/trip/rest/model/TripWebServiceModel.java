@@ -5,8 +5,6 @@
  */
 package de.htw.fb4.imi.jumpup.trip.rest.model;
 
-import java.sql.Timestamp;
-
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlRootElement;
@@ -327,14 +325,4 @@ public class TripWebServiceModel extends AbstractRestModel
         this.durationSeconds = durationSeconds;
     }
 
-    /**
-     * 
-     * @param cancelationDateTime2
-     */
-    public void setCancelationDateTime(Timestamp cancelationDateTime2)
-    {
-        if (null != cancelationDateTime2) {
-            this.setCancelationDateTime(cancelationDateTime2.getTime());
-        }
-    }
 }

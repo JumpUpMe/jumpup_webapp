@@ -184,8 +184,12 @@ public class TripEntityMapper
 
         entityTrip.setVehicle(webServiceModel.getVehicle());
         // webServiceTrip.setDriver(entityTrip.getDriver());
-        entityTrip.setCancelationDateTime(
-                convertToDatetime(webServiceModel.getCancelationDateTime()));
+
+        if (null != webServiceModel.getCancelationDateTime()) {
+            entityTrip.setCancelationDateTime(convertToDatetime(
+                    webServiceModel.getCancelationDateTime()));
+        }
+
         entityTrip.setDistanceMeters(webServiceModel.getDistanceMeters());
         entityTrip.setDurationSeconds(webServiceModel.getDurationSeconds());
 
