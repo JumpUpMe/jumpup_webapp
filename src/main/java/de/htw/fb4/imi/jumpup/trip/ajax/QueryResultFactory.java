@@ -71,7 +71,7 @@ public class QueryResultFactory
     private void fillFromTripEntity(
             SingleTripQueryResult singleTripQueryResult, Trip trip, TripSearchCriteria searchCriteria)
     {
-        singleTripQueryResult.getTrip().setId(trip.getIdentity());
+        singleTripQueryResult.getTrip().setIdentity(trip.getIdentity());
         singleTripQueryResult.getTrip().setStartpoint(trip.getStartpoint());
         singleTripQueryResult.getTrip().setEndpoint(trip.getEndpoint());
         singleTripQueryResult.getTrip().setLatStartpoint(

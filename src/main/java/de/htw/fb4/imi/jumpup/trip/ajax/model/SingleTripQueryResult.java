@@ -44,7 +44,7 @@ public class SingleTripQueryResult implements Serializable
         protected Integer id;
         protected String username;
         protected String email;
-        protected String prename;   
+        protected String prename;
         protected String lastname;
         protected String town;
         protected String country;
@@ -272,7 +272,7 @@ public class SingleTripQueryResult implements Serializable
          */
         private static final long serialVersionUID = -8609518419139415328L;
 
-        protected long id;
+        protected long identity;
         protected String startpoint;
         protected String endpoint;
         protected double latStartpoint;
@@ -292,18 +292,18 @@ public class SingleTripQueryResult implements Serializable
         /**
          * @return the id
          */
-        public long getId()
+        public long getIdentity()
         {
-            return id;
+            return identity;
         }
 
         /**
          * @param l
          *            the id to set
          */
-        public void setId(long l)
+        public void setIdentity(long l)
         {
-            this.id = l;
+            this.identity = l;
         }
 
         /**
@@ -520,7 +520,8 @@ public class SingleTripQueryResult implements Serializable
         }
 
         /**
-         * @param numberOfBookings the numberOfBookings to set
+         * @param numberOfBookings
+         *            the numberOfBookings to set
          */
         public void setNumberOfBookings(Integer numberOfBookings)
         {
@@ -536,10 +537,10 @@ public class SingleTripQueryResult implements Serializable
         }
 
         /**
-         * @param d the distanceFromPassengersLocation to set
+         * @param d
+         *            the distanceFromPassengersLocation to set
          */
-        public void setDistanceFromPassengersLocation(
-                double d)
+        public void setDistanceFromPassengersLocation(double d)
         {
             this.distanceFromPassengersLocation = d;
         }
@@ -553,10 +554,10 @@ public class SingleTripQueryResult implements Serializable
         }
 
         /**
-         * @param d the distanceFromPassengersDestination to set
+         * @param d
+         *            the distanceFromPassengersDestination to set
          */
-        public void setDistanceFromPassengersDestination(
-                double d)
+        public void setDistanceFromPassengersDestination(double d)
         {
             this.distanceFromPassengersDestination = d;
         }

@@ -272,7 +272,7 @@ this.de.htw.fb4.imi.jumpup.trip = this.de.htw.fb4.imi.jumpup.trip || {};
 
 		var messages = this.options.messages;
 
-		var id = trip.id;
+		var id = trip.identity;
 		var startPoint = trip.startpoint;
 		var endPoint = trip.endpoint;
 		var startDate = trip.startDateTime;
