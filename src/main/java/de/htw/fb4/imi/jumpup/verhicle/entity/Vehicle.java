@@ -12,7 +12,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 
 import de.htw.fb4.imi.jumpup.entity.AbstractEntity;
-import de.htw.fb4.imi.jumpup.trip.entity.Trip;
+import de.htw.fb4.imi.jumpup.trip.jpa.entity.Trip;
 
 /**
  * <p>

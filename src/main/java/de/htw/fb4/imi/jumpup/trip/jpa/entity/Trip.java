@@ -3,7 +3,7 @@
  *
  * Copyright (c) 2014 Sebastian Renner, Marco Seidler, Sascha Feldmann
  */
-package de.htw.fb4.imi.jumpup.trip.entity;
+package de.htw.fb4.imi.jumpup.trip.jpa.entity;
 
 import java.sql.Timestamp;
 import java.util.List;

@@ -26,7 +26,7 @@ import de.htw.fb4.imi.jumpup.booking.entity.Booking;
 import de.htw.fb4.imi.jumpup.booking.rest.model.BookingEntityMapper;
 import de.htw.fb4.imi.jumpup.booking.rest.model.BookingWebServiceModel;
 import de.htw.fb4.imi.jumpup.rest.controller.SecuredRestController;
-import de.htw.fb4.imi.jumpup.trip.TripDAO;
+import de.htw.fb4.imi.jumpup.trip.ejb.TripDAO;
 import de.htw.fb4.imi.jumpup.validation.ValidationException;
 
 /**

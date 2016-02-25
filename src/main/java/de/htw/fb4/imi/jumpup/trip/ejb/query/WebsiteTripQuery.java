@@ -3,7 +3,7 @@
  *
  * Copyright (c) 2014-2015 Sebastian Renner, Marco Seidler, Sascha Feldmann
  */
-package de.htw.fb4.imi.jumpup.trip.query;
+package de.htw.fb4.imi.jumpup.trip.ejb.query;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,15 +19,15 @@ import de.htw.fb4.imi.jumpup.Application.LogType;
 import de.htw.fb4.imi.jumpup.settings.BeanNames;
 import de.htw.fb4.imi.jumpup.settings.PersistenceSettings;
 import de.htw.fb4.imi.jumpup.translate.Translatable;
-import de.htw.fb4.imi.jumpup.trip.TripDAO;
 import de.htw.fb4.imi.jumpup.trip.ajax.QueryResultFactory;
 import de.htw.fb4.imi.jumpup.trip.ajax.model.SingleTripQueryResult;
 import de.htw.fb4.imi.jumpup.trip.ajax.model.TripQueryNoResults;
 import de.htw.fb4.imi.jumpup.trip.ajax.model.TripQueryResults;
 import de.htw.fb4.imi.jumpup.trip.ajax.model.TripSearchCriteria;
-import de.htw.fb4.imi.jumpup.trip.entity.Trip;
+import de.htw.fb4.imi.jumpup.trip.ejb.TripDAO;
 import de.htw.fb4.imi.jumpup.trip.graph.Path;
 import de.htw.fb4.imi.jumpup.trip.graph.shortest.PathNotFoundException;
+import de.htw.fb4.imi.jumpup.trip.jpa.entity.Trip;
 import de.htw.fb4.imi.jumpup.trip.query.filter.DirectTripsSearchFilterChain;
 import de.htw.fb4.imi.jumpup.trip.query.filter.OverlappingTripsFilter;
 import de.htw.fb4.imi.jumpup.user.entity.User;

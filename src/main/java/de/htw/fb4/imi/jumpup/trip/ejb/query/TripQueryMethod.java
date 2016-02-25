@@ -3,14 +3,14 @@
  *
  * Copyright (c) 2014-2015 Sebastian Renner, Marco Seidler, Sascha Feldmann
  */
-package de.htw.fb4.imi.jumpup.trip.query;
+package de.htw.fb4.imi.jumpup.trip.ejb.query;
 
 import javax.ejb.Local;
 
 import de.htw.fb4.imi.jumpup.trip.ajax.model.TripQueryNoResults;
 import de.htw.fb4.imi.jumpup.trip.ajax.model.TripQueryResults;
 import de.htw.fb4.imi.jumpup.trip.ajax.model.TripSearchCriteria;
-import de.htw.fb4.imi.jumpup.trip.entity.Trip;
+import de.htw.fb4.imi.jumpup.trip.jpa.entity.Trip;
 import de.htw.fb4.imi.jumpup.util.ErrorPrintable;
 
 /**

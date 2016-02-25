@@ -28,7 +28,7 @@ import de.htw.fb4.imi.jumpup.settings.BeanNames;
 import de.htw.fb4.imi.jumpup.translate.Translatable;
 import de.htw.fb4.imi.jumpup.trip.ajax.QueryResultFactory;
 import de.htw.fb4.imi.jumpup.trip.ajax.model.TripSearchCriteria;
-import de.htw.fb4.imi.jumpup.trip.entity.Trip;
+import de.htw.fb4.imi.jumpup.trip.jpa.entity.Trip;
 import de.htw.fb4.imi.jumpup.trip.util.ConfigReader;
 import de.htw.fb4.imi.jumpup.trip.util.TripAndBookingsConfigKeys;
 import de.htw.fb4.imi.jumpup.user.Role;

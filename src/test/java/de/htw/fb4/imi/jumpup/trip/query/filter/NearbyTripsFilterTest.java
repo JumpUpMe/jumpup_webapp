@@ -18,7 +18,7 @@ import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
 
 import de.htw.fb4.imi.jumpup.trip.ajax.model.TripSearchCriteria;
-import de.htw.fb4.imi.jumpup.trip.entity.Trip;
+import de.htw.fb4.imi.jumpup.trip.jpa.entity.Trip;
 
 /**
  * <p>Test of {@link NearbyTripsFilter} to find passenger's trips that are near the driver's route.</p>

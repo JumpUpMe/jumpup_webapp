@@ -8,9 +8,9 @@ package de.htw.fb4.imi.jumpup.trip.query.filter;
 import java.util.List;
 
 import de.htw.fb4.imi.jumpup.trip.ajax.model.TripSearchCriteria;
-import de.htw.fb4.imi.jumpup.trip.entity.Trip;
 import de.htw.fb4.imi.jumpup.trip.graph.Path;
 import de.htw.fb4.imi.jumpup.trip.graph.shortest.PathNotFoundException;
+import de.htw.fb4.imi.jumpup.trip.jpa.entity.Trip;
 
 /**
  * <p>The AbstractFilter realizes the decorator.</p>

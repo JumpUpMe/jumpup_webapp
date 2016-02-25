@@ -3,13 +3,13 @@
  *
  * Copyright (c) 2014-2015 Sebastian Renner, Marco Seidler, Sascha Feldmann
  */
-package de.htw.fb4.imi.jumpup.trip;
+package de.htw.fb4.imi.jumpup.trip.ejb;
 
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Named;
 
 import de.htw.fb4.imi.jumpup.settings.BeanNames;
-import de.htw.fb4.imi.jumpup.trip.entity.Trip;
+import de.htw.fb4.imi.jumpup.trip.jpa.entity.Trip;
 
 /**
  * <p></p>

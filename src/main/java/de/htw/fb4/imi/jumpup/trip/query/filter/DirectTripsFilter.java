@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Set;
 
 import de.htw.fb4.imi.jumpup.trip.ajax.model.TripSearchCriteria;
-import de.htw.fb4.imi.jumpup.trip.entity.Trip;
+import de.htw.fb4.imi.jumpup.trip.jpa.entity.Trip;
 import de.htw.fb4.imi.jumpup.util.math.CoordinateUtil;
 import de.htw.fb4.imi.jumpup.util.math.Coordinates;
 

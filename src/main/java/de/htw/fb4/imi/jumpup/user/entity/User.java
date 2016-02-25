@@ -24,7 +24,7 @@ import de.htw.fb4.imi.jumpup.booking.entity.Booking;
 import de.htw.fb4.imi.jumpup.entity.AbstractEntity;
 import de.htw.fb4.imi.jumpup.settings.ResidenceSettings;
 import de.htw.fb4.imi.jumpup.settings.UserSettings;
-import de.htw.fb4.imi.jumpup.trip.entity.Trip;
+import de.htw.fb4.imi.jumpup.trip.jpa.entity.Trip;
 import de.htw.fb4.imi.jumpup.user.util.HashGenerable;
 
 /**

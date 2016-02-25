@@ -13,13 +13,13 @@ import javax.inject.Inject;
 import de.htw.fb4.imi.jumpup.Application;
 import de.htw.fb4.imi.jumpup.Application.LogType;
 import de.htw.fb4.imi.jumpup.settings.BeanNames;
-import de.htw.fb4.imi.jumpup.trip.entity.Trip;
 import de.htw.fb4.imi.jumpup.trip.graph.Graph;
 import de.htw.fb4.imi.jumpup.trip.graph.GraphBuilder;
 import de.htw.fb4.imi.jumpup.trip.graph.Path;
 import de.htw.fb4.imi.jumpup.trip.graph.Vertex;
 import de.htw.fb4.imi.jumpup.trip.graph.shortest.PathNotFoundException;
 import de.htw.fb4.imi.jumpup.trip.graph.shortest.Routable;
+import de.htw.fb4.imi.jumpup.trip.jpa.entity.Trip;
 import de.htw.fb4.imi.jumpup.util.math.Coordinates;
 
 /**

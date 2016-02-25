@@ -8,7 +8,7 @@ package de.htw.fb4.imi.jumpup.trip.graph;
 import java.util.HashSet;
 import java.util.Set;
 
-import de.htw.fb4.imi.jumpup.trip.entity.Trip;
+import de.htw.fb4.imi.jumpup.trip.jpa.entity.Trip;
 
 /**
  * <p>A path is a set of {@link Vertex} instances in a {@link Graph}.</p>

@@ -17,7 +17,7 @@ import javax.inject.Named;
 import de.htw.fb4.imi.jumpup.rest.IEntityMapper;
 import de.htw.fb4.imi.jumpup.rest.RestUtil;
 import de.htw.fb4.imi.jumpup.settings.BeanNames;
-import de.htw.fb4.imi.jumpup.trip.entity.Trip;
+import de.htw.fb4.imi.jumpup.trip.jpa.entity.Trip;
 import de.htw.fb4.imi.jumpup.validation.ValidationException;
 import de.htw.fb4.imi.jumpup.validation.validator.JumpUpValidator;
 
@@ -85,12 +85,12 @@ public class TripEntityMapper
     @Override
     public TripWebServiceModel mapEntity(Trip entity)
     {
-        if (!(entity instanceof de.htw.fb4.imi.jumpup.trip.entity.Trip)) {
+        if (!(entity instanceof de.htw.fb4.imi.jumpup.trip.jpa.entity.Trip)) {
             throw new IllegalArgumentException("Type of entity must be Trip");
         }
 
         TripWebServiceModel webServiceTrip = new TripWebServiceModel();
-        de.htw.fb4.imi.jumpup.trip.entity.Trip entityTrip = entity;
+        de.htw.fb4.imi.jumpup.trip.jpa.entity.Trip entityTrip = entity;
 
         webServiceTrip.setIdentity(entityTrip.getIdentity());
         webServiceTrip.setCreationTimestamp(
@@ -134,7 +134,7 @@ public class TripEntityMapper
     public Trip mapWebServiceModel(TripWebServiceModel webServiceModel)
             throws ValidationException
     {
-        Trip entityTrip = new de.htw.fb4.imi.jumpup.trip.entity.Trip();
+        Trip entityTrip = new de.htw.fb4.imi.jumpup.trip.jpa.entity.Trip();
 
         entityTrip.setIdentity(webServiceModel.getIdentity());
         entityTrip.setCreationTimestamp(

@@ -3,7 +3,7 @@
  *
  * Copyright (c) 2014 Sebastian Renner, Marco Seidler, Sascha Feldmann
  */
-package de.htw.fb4.imi.jumpup.trip.creation;
+package de.htw.fb4.imi.jumpup.trip.ejb.creation;
 
 import java.io.File;
 import java.sql.Timestamp;
@@ -29,7 +29,7 @@ import de.htw.fb4.imi.jumpup.mail.builder.MailBuilder;
 import de.htw.fb4.imi.jumpup.settings.BeanNames;
 import de.htw.fb4.imi.jumpup.settings.PersistenceSettings;
 import de.htw.fb4.imi.jumpup.translate.Translatable;
-import de.htw.fb4.imi.jumpup.trip.entity.Trip;
+import de.htw.fb4.imi.jumpup.trip.jpa.entity.Trip;
 import de.htw.fb4.imi.jumpup.trip.util.ConfigReader;
 import de.htw.fb4.imi.jumpup.trip.util.TripAndBookingsConfigKeys;
 import de.htw.fb4.imi.jumpup.user.entity.User;

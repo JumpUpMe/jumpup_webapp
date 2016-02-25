@@ -11,7 +11,7 @@ import java.util.Set;
 import javax.ejb.Stateless;
 
 import de.htw.fb4.imi.jumpup.settings.BeanNames;
-import de.htw.fb4.imi.jumpup.trip.entity.Trip;
+import de.htw.fb4.imi.jumpup.trip.jpa.entity.Trip;
 import de.htw.fb4.imi.jumpup.util.math.CoordinateUtil;
 import de.htw.fb4.imi.jumpup.util.math.Coordinates;
 

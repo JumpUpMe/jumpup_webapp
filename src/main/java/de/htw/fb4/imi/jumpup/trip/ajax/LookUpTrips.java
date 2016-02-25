@@ -23,7 +23,7 @@ import de.htw.fb4.imi.jumpup.Application;
 import de.htw.fb4.imi.jumpup.Application.LogType;
 import de.htw.fb4.imi.jumpup.trip.ajax.model.TripQueryResults;
 import de.htw.fb4.imi.jumpup.trip.ajax.model.TripSearchCriteria;
-import de.htw.fb4.imi.jumpup.trip.query.TripQueryMethod;
+import de.htw.fb4.imi.jumpup.trip.ejb.query.TripQueryMethod;
 
 /**
  * <p>

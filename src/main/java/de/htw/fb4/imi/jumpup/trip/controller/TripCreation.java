@@ -17,10 +17,10 @@ import de.htw.fb4.imi.jumpup.Application.LogType;
 import de.htw.fb4.imi.jumpup.controller.AbstractFacesController;
 import de.htw.fb4.imi.jumpup.navigation.NavigationOutcomes;
 import de.htw.fb4.imi.jumpup.settings.BeanNames;
-import de.htw.fb4.imi.jumpup.trip.TripDAO;
-import de.htw.fb4.imi.jumpup.trip.TripRequest;
-import de.htw.fb4.imi.jumpup.trip.creation.TripManagementMethod;
-import de.htw.fb4.imi.jumpup.trip.entity.Trip;
+import de.htw.fb4.imi.jumpup.trip.ejb.TripDAO;
+import de.htw.fb4.imi.jumpup.trip.ejb.TripRequest;
+import de.htw.fb4.imi.jumpup.trip.ejb.creation.TripManagementMethod;
+import de.htw.fb4.imi.jumpup.trip.jpa.entity.Trip;
 import de.htw.fb4.imi.jumpup.trip.util.ConfigReader;
 import de.htw.fb4.imi.jumpup.user.login.LoginSession;
 

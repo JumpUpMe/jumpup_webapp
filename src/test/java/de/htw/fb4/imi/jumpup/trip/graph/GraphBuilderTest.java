@@ -10,11 +10,11 @@ import static org.junit.Assert.*;
 import java.util.ArrayList;
 import java.util.List;
 
+import de.htw.fb4.imi.jumpup.trip.jpa.entity.Trip;
+
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-
-import de.htw.fb4.imi.jumpup.trip.entity.Trip;
 
 /**
  * <p></p>
