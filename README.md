@@ -69,3 +69,5 @@ Installation
 	```cd jumpup_configurations```
 	```./deploy.sh -e development```
 13. You can access the webapp on: http://localhost:8080/jumpup/
+
+...
